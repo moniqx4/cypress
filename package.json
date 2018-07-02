@@ -1,0 +1,16 @@
+{
+  "name": "MoniCypress",
+  "version": "1.0.0",
+  "description": "cypress test project",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^3.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open"
+  },
+  "author": "Monica Dixon",
+  "license": "ISC"
+}

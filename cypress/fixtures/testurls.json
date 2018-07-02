@@ -1,0 +1,10 @@
+{
+    "tqa3dev": "https://development-na-tqa3.tn.services",
+    "tqa5dev": "https://development-na-tqa5.tn.services",
+    "login": "/account/login",
+    "giftcert": "/gift/add",
+    "contribution" : "/donate/contribute1",
+    "membership" : "/donate/contribute2",
+    "calendar":"/events"
+
+}

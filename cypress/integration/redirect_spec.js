@@ -35,6 +35,13 @@ describe('v7 to v6 Redirects non-Auth Page', function() {
 
     })
 
+    it('Visits the v6 Direct Contribution/Membership Page Url', function() {
+      cy.visit('/dev/contribute2.aspx?CT=10')
+     
+      cy.url().should('contains', '/donate/contribute2?CT=10')
+
+    })
+
     it('Visits the v6 Gift Certificate Page Url', function() {
       cy.visit('/gift/add.aspx')
      
@@ -92,6 +99,14 @@ describe('v7 to v6 Redirects non-Auth Page', function() {
       cy.url().should('contains', '/packages/flex/751/details')
 
     })
+
+    
+    it('Visits the v6 Auxiliary Packages Listing Page Url', function() {
+      cy.visit('/auxpkg/listing.aspx')
+    
+      cy.url().should('contains', '/packages')
+
+    })  
 
     it('Visits the v6 Forgot Login Page Url', function() {
       cy.visit('/account/forgot.aspx')

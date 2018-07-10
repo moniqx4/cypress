@@ -1,4 +1,5 @@
 {
   "baseUrl": "https://development-na-tqa5.tn.services",
-  "projectId": "376uw8"
+  "projectId": "376uw8",
+  "chromeWebSecurity": false
 }

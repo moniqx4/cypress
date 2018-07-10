@@ -1,35 +1,20 @@
-describe('Admin Login Test', function() {
-
+describe('Admin Login Test', function() {  
     
+    beforeEach(() => {
+        cy.visit('/admin/login')
+    })
+         
   
-      it('Navigates to the Admin Login Page', function() {
+      it('Navigates/Login to the Admin Page', function() {
         
-        cy.visit('/admin/login')  
-        
-        // cy.fixture('users').then((json) => {
-        //     cy.route('GET', '/users/**', json)
+     
+        cy.adminlogin('autotest','testpassword')
 
-        // })
-
-        // cy.get('admin').then(() => {
-        //     this.usersJSON
-        // })
-
-        // cy.get('adminpassword').then(() => {
-        //     this.usersJSON
-        // })
-        
-        // Valid Admin Login Entry
-       cy.get('#login-username')
-       .type('autotest')
-       .should('have.value', 'autotest')
-  
-       cy.get('#login-password')
-       .type('testpassword')
 
        Cypress.on('uncaught:exception', (err, runnable) => {
         // returning false here prevents Cypress from
         // failing the test
+        //this is here, because there is an error on the admin page with usergroups, needs to be bugged and fixed
         return false
       })
       
@@ -37,20 +22,16 @@ describe('Admin Login Test', function() {
        cy.get('#login-attempt').click()
 
        cy.visit('/admin/pageeditor')  
-
+       
        //select from tn-page-list, the guid id for example: Package Listing
+       //cy.get('#login-username').select('')
        //find the field by guild and fieldname, and then enter in the text you want
+       //cy.get('#login-username')
+       //.type('autotest')
        //then click the save button btn-primary
+       //cy.get('.btn-primary').click()
        //load the page change was made on in new tab, 
        //find the item and get the text  and compare with what was changed.
   
-       //check that user is logged in
-        //cy.get('.tn-login-link')
-        //.contains('autotester@mailinator.com').should('be.visible')
-  
-       //logout
-       //cy.get('.tn-logout-link').click()
-       //verification they have logged out 
-       //cy.url().should('contains', '/account/logout')
       })
     })

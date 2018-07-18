@@ -103,3 +103,36 @@ Cypress.Commands.add("NewTab",(win)  => {
         cy.get('#open-window').click()
         //cy.get('@windowOpen').should('be.calledWith', urlpath)
 })
+
+//---check metadata on page
+Cypress.Commands.add("checkMetadata",(tagname, expvalue) => {
+
+    it('look inside page source code',() => {
+        cy.document();
+    
+    })
+
+    //check author, Monica
+    it('looks inside <meta> tag for metadata', () => {
+        cy.get(tagname).should("have.attr","content",expvalue)
+    })
+
+})
+
+//---check metadata on page
+Cypress.Commands.add("getMetadata",(tagname, metadata) => {
+
+    it('look inside page source code',() => {
+        cy.document();
+    
+    })
+
+    //get specified metadata
+    it('looks inside <meta> tag for metadata', () => {
+        cy.get(tagname).should("have.attr","content",metadata).then(($value) => {
+            const valuetext = $value.text()
+    })
+
+})
+
+})

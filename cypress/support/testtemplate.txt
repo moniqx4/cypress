@@ -1,0 +1,14 @@
+describe('Test Suite Name', function() {
+
+    beforeEach(() => {
+      cy.visit('')
+    })
+ 
+    it('Test Description', function() {
+      //Test steps go inside of here
+
+    })
+
+    //can have multiple test, by duplicating the test section
+
+  })

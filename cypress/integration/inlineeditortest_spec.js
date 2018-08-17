@@ -27,7 +27,5 @@ describe('Inline Editor Test', function() {
 
        //goto open tab and navigate to the event listing page
 
-
- })
-
-
+      })
+    })

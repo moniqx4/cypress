@@ -21,6 +21,13 @@ describe('v7 to v6 Redirects non-Auth Page', function() {
 
     })
 
+    it('Visits the v6 Contribution Page Url, pre-selected', function() {
+      cy.visit('/dev/contribute.aspx?don=10&fieldAmt=25')
+      
+      cy.url().should('contains', '/donate/contribute1?ct=10&amount=25')
+
+    })
+
     it('Visits the v6 Single Event Listing Page Url', function() {
       cy.visit('/single/EventListing.aspx')
      
@@ -35,10 +42,10 @@ describe('v7 to v6 Redirects non-Auth Page', function() {
 
     })
 
-    it('Visits the v6 Direct Contribution/Membership Page Url', function() {
-      cy.visit('/dev/contribute2.aspx?CT=10')
+    it('Visits the v6 Direct Contribution/Membership Page Url, pre-selected', function() {
+      cy.visit('/dev/contribute2.aspx?don=17')
      
-      cy.url().should('contains', '/donate/contribute2?CT=10')
+      cy.url().should('contains', '/donate/contribute2?ct=17')
 
     })
 
@@ -96,7 +103,7 @@ describe('v7 to v6 Redirects non-Auth Page', function() {
     it('Visits the v6 Auxiliary Packages Page Url', function() {
       cy.visit('/auxpkg/detail.aspx?pkg=751&flex=Y&nfs=N')
     
-      cy.url().should('contains', '/packages/flex/751/details')
+      cy.url().should('contains', '/packages/flex/751/')
 
     })
 

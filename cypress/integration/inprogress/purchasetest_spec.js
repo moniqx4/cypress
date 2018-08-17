@@ -4,7 +4,7 @@ describe('Purchase Test', function() {
       cy.visit('/account/login')
     })
  
-    it('Navigates to the Login Page', function() {
+    it('Purchases Gift Certificate', function() {
       // cy.server()
       // cy.route('GET', '/users/**', 'fixture:users')
     
@@ -33,7 +33,49 @@ describe('Purchase Test', function() {
     cy.get('#tn-payment-submit-button').click()
 
     //on HPA form (angular form)
-    cy.get('.modal-body').ge
+    cy.get("iframe").then(function($iframe){
+      // query into the iframe
+      const $body = $iframe.contents().find('body')
+      //var b = $iframe.contents().find("body")
+      //var evt = new Event(
+         //cy.get('.iframe[0]').within(($iframe) => {
+         
+          cy
+          .wrap($body)
+          .find('input:eq(0)')
+          .type('Auto Tester')
+
+          cy
+          .wrap($body)
+          .find('select:eq(1)')
+          .get('Card Type')
+          .select('Autumn Ridge Preferred Visa')         
+
+          cy
+          .wrap($body)
+          .find('input:eq(2)')
+          .type('4111111111111111')
+
+          cy
+          .wrap($body)
+          .find('select:eq(3)')
+          .get('CVV')          
+          .select('2020')  
+
+          cy
+          .wrap($body)
+          .find('input:eq(4)')
+          .type('010')
+
+          cy
+          .wrap($body)
+          .find('input:eq(5)')
+          .click({force : true})       
+     
+     
+    })
+    
+    // cy.get('.iframe[0]').within(($iframe) => {
 
     // cy.get('#name').type('Auto Tester')
     // cy.get('#paymentMethod').select('5')
@@ -41,7 +83,7 @@ describe('Purchase Test', function() {
     // cy.get('#expirationYear').select('2020')  // or maybe object:17
     // cy.get('#cvv').type('010')
     // cy.get('body > form > div.btn-submit-container > button').click()
-
+  //})
      //verify receipt page
 
      //logout

@@ -5,6 +5,7 @@
     "giftcert": "/gift/add",
     "contribution" : "/donate/contribute1",
     "membership" : "/donate/contribute2",
-    "calendar":"/events"
+    "calendar":"/events",
+    "register": "/account/create"
 
 }

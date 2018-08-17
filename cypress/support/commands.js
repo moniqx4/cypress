@@ -153,18 +153,19 @@ Cypress.Commands.add("add_fixedpackage", (pricetype_selector,num_pkgs) => {
 })
 
 // -- Gift Cert Add -- 
-Cypress.Commands.add("AddGiftCerticate", (amount) => {
+Cypress.Commands.add("addgiftcert", (amount) => {
 
     //goto gift cert page
     cy.visit('/gift/add')
 
     //add to cart
-    cy.get('#AddGiftCertificate_Amount')
-    .type(amount)
+    cy.get('#AddGiftCertificate_Amount').type(amount)
 
     //amount box, id = AddGiftCertificate_Amount
     //click Add to cart id = tn-gift-certificate-submit
     cy.get('#tn-gift-certificate-submit').click()
+
+
 })
 
 })

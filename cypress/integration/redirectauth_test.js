@@ -1,9 +1,9 @@
-describe('v7 to v6 Redirects non-Auth Page', function() {
+describe('v7 to v6 Redirects Auth Page', function() {
 
-    it('Visits the v6 Login Page Url', function() {
-      cy.visit('/account/login.aspx')
+    it('Visits the v6 Account Update Page Url', function() {
+      cy.visit('/account/update.aspx')
 
-      cy.url().should('contains', '/account/login')
+      cy.url().should('contains', '/account/update')
 
     })
 

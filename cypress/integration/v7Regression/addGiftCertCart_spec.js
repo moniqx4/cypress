@@ -8,7 +8,7 @@ describe('Add and Remove Gift Cert from Cart', function() {
      //add to cart
      cy.get('#AddGiftCertificate_Amount')
      .type('10')
-     //amount box, id = AddGiftCertificate_Amount
+    
      //click Add to cart id = tn-gift-certificate-submit
      cy.get('#tn-gift-certificate-submit').click()
 
@@ -19,9 +19,17 @@ describe('Add and Remove Gift Cert from Cart', function() {
      cy.get('body > div.modal.fade.in > div.modal-dialog > div > div.modal-footer > button.modal-btn-confirm.btn.btn-primary').click()
 
      //verify on the empty cart page
-    //  cy.get('#tn-whitelabel-container > main > section.tn-cart-component > div').then(())
+    cy.get('.tn-empty-cart-message').then(($carttext) => {
+
+      // store the cart's text
+      const txt = $carttext.text()
+
+      //check for empty cart message
+      cy.get('.tn-empty-cart-message')     
+        .should(($carttext) => {
+        expect($carttext.text()).contains('our cart is currently empty.')
+      })
 
     })
-
-
+  })
 })

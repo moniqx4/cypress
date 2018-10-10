@@ -33,7 +33,11 @@ describe('Purchase Test', function() {
     cy.get('#tn-payment-submit-button').click()
 
     //on HPA form (angular form)
+<<<<<<< HEAD
     cy.get('iframe').ge
+=======
+    cy.get('.modal-body').ge
+>>>>>>> master
 
     // cy.get('#name').type('Auto Tester')
     // cy.get('#paymentMethod').select('5')

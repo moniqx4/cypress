@@ -3,10 +3,15 @@
   "version": "1.0.0",
   "description": "cypress test project",
   "main": "index.js",
+<<<<<<< HEAD
   "dependencies": {},
   "devDependencies": {
+=======
+  "dependencies": {
+>>>>>>> master
     "cypress": "^3.0.3"
   },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open"

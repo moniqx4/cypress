@@ -135,4 +135,36 @@ Cypress.Commands.add("getMetadata",(tagname, metadata) => {
 
 })
 
+// -- HPA Payment --
+Cypress.Commands.add("hpa_payment", () => {
+    // Fillout form and submit payment
+    
+})
+
+// -- Package Add --
+Cypress.Commands.add("add_fixedpackage", (pricetype_selector,num_pkgs) => {
+    // select price type and quantity
+    cy.get('#tn-fixed-package-detail-form > div.tn-ticket-selector__controls-container > fieldset.tn-ticket-selector__zone-selector > ul > li > label > input').click()
+
+        cy.get(pricetype_selector).select(num_pkgs)
+
+        cy.get('#tn-add-to-cart-button').click()
+    
+})
+
+// -- Gift Cert Add -- 
+Cypress.Commands.add("AddGiftCerticate", (amount) => {
+
+    //goto gift cert page
+    cy.visit('/gift/add')
+
+    //add to cart
+    cy.get('#AddGiftCertificate_Amount')
+    .type(amount)
+
+    //amount box, id = AddGiftCertificate_Amount
+    //click Add to cart id = tn-gift-certificate-submit
+    cy.get('#tn-gift-certificate-submit').click()
+})
+
 })

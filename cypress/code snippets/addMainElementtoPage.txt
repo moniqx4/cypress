@@ -1,0 +1,11 @@
+(() => {
+  const $el= document.createElement('main');
+  $el.innerHTML = 'HI! I AM ANOTHER `MAIN` ELEMENT! ❤';
+  $el.setAttribute('style', 'color: white; background-color: cornflowerblue; padding: 30px; border: 3px dotted tomato;');
+
+  document.body.insertAdjacentElement('afterbegin', $el);
+
+  const count = Array.from(document.querySelectorAll('main')).length;
+
+  return `There are now ${count} MAIN elements on this page.`
+})();

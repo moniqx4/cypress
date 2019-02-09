@@ -1,0 +1,19 @@
+   describe('mobile responsive', function(){
+      beforeEach(function(){
+        // https://on.cypress.io/viewport
+        cy.viewport('iphone-6')
+      })
+
+
+      it('displays hamburger menu', function(){
+        // by default the About nav menu is hidden
+        cy.contains('About').should('be.hidden')
+        cy.get('#about-section').should('be.hidden')
+
+        // now it should be visible after click
+        cy.get('.icon-bar:first').parent().click()
+        cy.contains('About').should('be.visible').click()
+
+        // and the about section should now be visible
+        cy.get('#about-section').should('be.visible')
+      })

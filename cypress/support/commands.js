@@ -42,6 +42,42 @@ Cypress.Commands.add("login", (email, password) => {
 
 })
 
+//Login - NoCheck
+Cypress.Commands.add("login_nocheck", (email, password) => {
+
+    cy.get('#PatronAccountLogin_Username')
+    .type(email)
+    .should('have.value', email)
+
+    cy.get('#PatronAccountLogin_Password')
+    .type(password)  
+
+    cy.get('#tn-login-button').click()
+    
+})
+
+//-- Login to Facebook command --
+Cypress.Commands.add("facebooklogin", (email, password) => {
+
+    //cy.get().click('#tn-login-facebook-button')
+
+    //form[@id='tn-facebook-login-form']//button[@title='Log In or Register with your Facebook account.']
+    //cy.xpath('//form[@id='tn-facebook-login-form']//button[@title='Log In or Register with your Facebook account.')
+    cy.xpath('//html[@id="facebook"]//input[@id="email"]')
+    .type(email)
+    .should('have.value', email)
+
+    cy.xpath('//html[@id="facebook"]//input[@id="pass"]')
+    .type(password)  
+    
+    cy.xpath('//html[@id="facebook"]//button[@id="loginbutton"]').click()
+
+    //check that user is logged in
+    cy.get('.tn-login-link')
+    .contains(email).should('be.visible')
+
+})
+
 //-- Logout command --
 Cypress.Commands.add("logout", () => {
     cy.get('.tn-logout-link').click()

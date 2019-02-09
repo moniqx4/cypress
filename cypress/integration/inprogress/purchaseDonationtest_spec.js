@@ -1,4 +1,4 @@
-describe('Purchase Test', function() {
+describe('Purchase Test - HPA', function() {
 
     beforeEach(() => {
       cy.visit('/donate/contribute1')
@@ -24,6 +24,8 @@ describe('Purchase Test', function() {
 
    cy.wait(1000)
 
+   cy.ng('model','').select('')
+   cy.ng('binding','')
    cy.get('#cardNumber').type('4111111111111111')
    cy.get('#expiryMonth').select('02')
    cy.get('#expiryYear').select('21')

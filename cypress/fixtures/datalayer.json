@@ -1,0 +1,82 @@
+[
+    {
+        "datalayer": "[0].session.customer.id",
+        "value": "0",
+        "message": "Customer Id is Correct"
+    },
+    {
+        "datalayer": "[0].session.customer.isAnonymous",
+        "value": true,
+        "message": "isAnonymous value is correct"
+    },
+    {
+        "datalayer": "[0].session.customer.isGuest",
+        "value": false,
+        "message": "isGuest value is correct"
+    },
+    {
+        "datalayer": "[0].session.isRenewalOrder",
+        "value": false,
+        "message": "isRenewalOrder value is correct"
+    },
+    {
+        "datalayer": "[0].session.modeOfSale",
+        "value": "3",
+        "message": "MOS is correct value is correct"
+    },
+    {
+        "datalayer": "[0].session.isVersionSevenEnabled",
+        "value": true,
+        "message": "Version Seven is enabled"
+    },
+    {
+        "datalayer": "[0].session.key",
+        "value": "",
+        "message": "Key is defined"
+    },
+    {
+        "datalayer": "[0].session.version",
+        "value": "7.20.0.17",
+        "message": "Version is correct"
+    },
+    {
+        "datalayer": "[1].product.packageId",
+        "value": "780",
+        "message": "Package Id is correct"
+    },
+    {
+        "datalayer": "[1].product.productTypeDescription",
+        "value": "StandardLegacyProductType",
+        "message": "Product Type Description is Correct"
+    },
+    {
+        "datalayer": "[1].product.contributionTypeId",
+        "value": "0",
+        "message": "Contribution Type is Correct"
+    },
+    {
+        "datalayer": "[1].product.fundId",
+        "value": "0",
+        "message": "FundId is Correct"
+    },
+    {
+        "datalayer": "[1].product.giftCertificatePaymentMethodId",
+        "value": "0",
+        "message": "giftCertificatePaymentMethodId is Correct"
+    },
+    {
+        "datalayer": "[1].product.onAccountPaymentMethodId",
+        "value": "0",
+        "message": "onAccountPaymentMethodId is Correct"
+    },
+    {
+        "datalayer": "[1].product.performanceId",
+        "value": "0",
+        "message": "Performance Id is Correct"
+    },
+    {
+        "datalayer": "[1].product.productionSeasonId",
+        "value": "0",
+        "message": "Performance Season Id is Correct"
+    }
+]

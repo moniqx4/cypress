@@ -101,16 +101,16 @@ describe('v7 to v6 Redirects non-Auth Page', function() {
     })
 
     it('Visits the v6 Auxiliary Flex Packages Page Url', function() {
-      cy.visit('/auxpkg/detail.aspx?pkg=751&flex=Y&nfs=N')
+      cy.visit('/auxpkg/detail.aspx?pkg=762&flex=Y&nfs=N')
     
-      cy.url().should('contains', '/packages/flex/751/')
+      cy.url().should('contains', '/packages/flex/762/')
 
     })
 
     it('Visits the v6 Auxiliary Fixed Packages Page Url', function() {
-      cy.visit('/auxpkg/detail.aspx?pkg=796&flex=N&nfs=N')
+      cy.visit('/auxpkg/detail.aspx?pkg=791&flex=N&nfs=N')
     
-      cy.url().should('contains', '/packages/fixed/796/')
+      cy.url().should('contains', '/packages/fixed/791/')
 
     })
 
@@ -123,9 +123,9 @@ describe('v7 to v6 Redirects non-Auth Page', function() {
     })  
 
     it('Visits the v6 Flex Package AddCYO Listing Page Url', function() {
-      cy.visit('/subscription/addCYOPackage_perfs.aspx?pkg=810&flex=Y')
+      cy.visit('/subscription/addCYOPackage_perfs.aspx?pkg=825&flex=Y')
     
-      cy.url().should('contains', '/packages/flex/810')
+      cy.url().should('contains', '/packages/flex/825')
 
     })  
 
@@ -218,6 +218,14 @@ describe('v7 to v6 Redirects non-Auth Page', function() {
       cy.visit('/auxpkg/listing.aspx')
     
       cy.url().should('contains', '/packages')
+      //verify it redirects with a 301 code
+
+    })
+
+    it('Visits the Prod Season Page Url', function() {
+      cy.visit('/single/psDetail.aspx?psn=6954')
+    
+      cy.url().should('contains', '/6954?psn=6954')
       //verify it redirects with a 301 code
 
     })

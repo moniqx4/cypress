@@ -19,7 +19,7 @@ var createCORSRequest = function(method, url) {
     return xhr;
   };
   
-  var url = 'https://development-na-tqa5.tn.services/api/session/sessionkey/';
+  var url = 'https://development-na-tqa1.tn.services/api/session/sessionkey/';
   var method = 'POST';
   var xhr = createCORSRequest(method, url);
   

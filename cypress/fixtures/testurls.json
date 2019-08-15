@@ -1,4 +1,6 @@
 {
+    "tqa1dev": "https://development-na-tqa1.tn.services",
+    "tqa2dev": "https://development-na-tqa2.tn.services",
     "tqa3dev": "https://development-na-tqa3.tn.services",
     "tqa5dev": "https://development-na-tqa5.tn.services",
     "login": "/account/login",

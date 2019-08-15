@@ -17,7 +17,7 @@ describe('DataLayer Tests - Calendar page', function () {
             assert.equal(win.dataLayer[0].session.isVersionSevenEnabled, true, 'Version Seven is enabled');
             assert.isDefined(win.dataLayer[0].session.key, 'Key is defined');
              assert.equal(win.dataLayer[0].session.sourceId,'20', 'SourceNo is correct');
-            assert.equal(win.dataLayer[0].session.version,'7.20.0.17', 'Version is correct');
+            assert.equal(win.dataLayer[0].session.version,'7.23.0.23', 'Version is correct');
 
             assert.equal(win.dataLayer[1].product.packageId, '0', 'Package Id is correct');
             assert.equal(win.dataLayer[1].product.productTypeDescription, null, 'Product Type Description is Correct');
@@ -52,7 +52,7 @@ describe('DataLayer Tests - Login Page - Not Logged in', function () {
             assert.equal(win.dataLayer[0].session.isVersionSevenEnabled, true, 'Version Seven is enabled');
             assert.isDefined(win.dataLayer[0].session.key, 'Key is defined');        
             assert.equal(win.dataLayer[0].session.sourceId,'20', 'SourceNo is correct');
-            assert.equal(win.dataLayer[0].session.version,'7.20.0.17', 'Version is correct');
+            assert.equal(win.dataLayer[0].session.version,'7.23.0.23', 'Version is correct');
 
             assert.equal(win.dataLayer[1].product.packageId, '0', 'Package Id is correct');
             assert.equal(win.dataLayer[1].product.productTypeDescription, null, 'Product Type Description is Correct');
@@ -87,7 +87,7 @@ describe('DataLayer Tests - Register - Not Logged in', function () {
             assert.equal(win.dataLayer[0].session.isVersionSevenEnabled, true, 'Version Seven is enabled');
             assert.isDefined(win.dataLayer[0].session.key, 'Key is defined');          
             assert.equal(win.dataLayer[0].session.sourceId,'20', 'SourceNo is correct');
-            assert.equal(win.dataLayer[0].session.version,'7.20.0.17', 'Version is correct');
+            assert.equal(win.dataLayer[0].session.version,'7.23.0.23', 'Version is correct');
 
             assert.equal(win.dataLayer[1].product.packageId, '0', 'Package Id is correct');
             assert.equal(win.dataLayer[1].product.productTypeDescription, null, 'Product Type Description is Correct');
@@ -120,7 +120,7 @@ describe('DataLayer Tests - Short Reg - Not Logged in', function () {
             assert.equal(win.dataLayer[0].session.isVersionSevenEnabled, true, 'Version Seven is enabled');
             assert.isDefined(win.dataLayer[0].session.key, 'Key is defined');          
             assert.equal(win.dataLayer[0].session.sourceId,'20', 'SourceNo is correct');
-            assert.equal(win.dataLayer[0].session.version,'7.20.0.17', 'Version is correct');
+            assert.equal(win.dataLayer[0].session.version,'7.23.0.23', 'Version is correct');
 
             assert.equal(win.dataLayer[1].product.packageId, '0', 'Package Id is correct');
             assert.equal(win.dataLayer[1].product.productTypeDescription, null, 'Product Type Description is Correct');
@@ -153,7 +153,7 @@ describe('DataLayer Tests - Calendar List Page - Not Logged in', function () {
             assert.equal(win.dataLayer[0].session.isVersionSevenEnabled, true, 'Version Seven is enabled');
             assert.isDefined(win.dataLayer[0].session.key, 'Key is defined');          
             assert.equal(win.dataLayer[0].session.sourceId,'20', 'SourceNo is correct');
-            assert.equal(win.dataLayer[0].session.version,'7.20.0.17', 'Version is correct');
+            assert.equal(win.dataLayer[0].session.version,'7.23.0.23', 'Version is correct');
 
             assert.equal(win.dataLayer[1].product.packageId, '0', 'Package Id is correct');
             assert.equal(win.dataLayer[1].product.productTypeDescription, null, 'Product Type Description is Correct');
@@ -187,7 +187,7 @@ describe('DataLayer Tests - Cart Page - Not Logged in', function () {
             assert.equal(win.dataLayer[0].session.isVersionSevenEnabled, true, 'Version Seven is enabled');
             assert.isDefined(win.dataLayer[0].session.key, 'Key is defined');          
             assert.equal(win.dataLayer[0].session.sourceId,'20', 'SourceNo is correct');
-            assert.equal(win.dataLayer[0].session.version,'7.20.0.17', 'Version is correct');
+            assert.equal(win.dataLayer[0].session.version,'7.23.0.23', 'Version is correct');
 
             assert.equal(win.dataLayer[1].product.packageId, '0', 'Package Id is correct');
             assert.equal(win.dataLayer[1].product.productTypeDescription, null, 'Product Type Description is Correct');
@@ -220,7 +220,7 @@ describe('DataLayer Tests - Package Listing Page - Not Logged in', function () {
             assert.equal(win.dataLayer[0].session.isVersionSevenEnabled, true, 'Version Seven is enabled');
             assert.isDefined(win.dataLayer[0].session.key, 'Key is defined');          
             assert.equal(win.dataLayer[0].session.sourceId,'20', 'SourceNo is correct');
-            assert.equal(win.dataLayer[0].session.version,'7.20.0.17', 'Version is correct');
+            assert.equal(win.dataLayer[0].session.version,'7.23.0.23', 'Version is correct');
 
             assert.equal(win.dataLayer[1].product.packageId, '0', 'Package Id is correct');
             assert.equal(win.dataLayer[1].product.productTypeDescription, null, 'Product Type Description is Correct');

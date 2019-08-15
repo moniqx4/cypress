@@ -23,7 +23,7 @@ describe('DataLayer Tests - Logged in', function () {
             assert.isDefined(win.dataLayer[0].session.key, 'Key is defined');
             assert.isDefined(win.dataLayer[0].session.version, 'Version is defined');
             assert.equal(win.dataLayer[0].session.sourceId,'20', 'SourceNo is correct');
-            assert.equal(win.dataLayer[0].session.version,'7.20.0.17', 'Version is correct');
+            assert.equal(win.dataLayer[0].session.version,'7.23.0.23', 'Version is correct');
 
             assert.equal(win.dataLayer[1].product.packageId, '780', 'Package Id is correct');
             assert.equal(win.dataLayer[1].product.productTypeDescription, 'StandardLegacyProductType', 'Product Type Description is Correct');
@@ -85,7 +85,7 @@ describe('DataLayer Tests - Logged in', function () {
             assert.isDefined(win.dataLayer[0].session.key, 'Key is defined');
             assert.isDefined(win.dataLayer[0].session.version, 'Version is defined');
             assert.equal(win.dataLayer[0].session.sourceId,'20', 'SourceNo is correct');
-            assert.equal(win.dataLayer[0].session.version,'7.20.0.17', 'Version is correct');
+            assert.equal(win.dataLayer[0].session.version,'7.23.0.23', 'Version is correct');
 
             assert.equal(win.dataLayer[1].product.packageId, '0', 'Package Id is correct');
             assert.equal(win.dataLayer[1].product.productTypeDescription, 'PAC - Standard Event', 'Product Type Description is Correct');
@@ -114,7 +114,7 @@ describe('DataLayer Tests - Logged in', function () {
             assert.equal(win.dataLayer[0].session.isVersionSevenEnabled, true, 'Version Seven is enabled');
             assert.isDefined(win.dataLayer[0].session.key, 'Key is defined');          
             assert.equal(win.dataLayer[0].session.sourceId,'20', 'SourceNo is correct');
-            assert.equal(win.dataLayer[0].session.version,'7.20.0.17', 'Version is correct');
+            assert.equal(win.dataLayer[0].session.version,'7.23.0.23', 'Version is correct');
 
             assert.equal(win.dataLayer[1].product.packageId, '0', 'Package Id is correct');
             assert.equal(win.dataLayer[1].product.productTypeDescription, 'Default TR_PMT_METHOD_GROUP', 'Product Type Description is Correct');
@@ -145,7 +145,7 @@ describe('DataLayer Tests - Logged in', function () {
             assert.equal(win.dataLayer[0].session.isVersionSevenEnabled, true, 'Version Seven is enabled');
             assert.isDefined(win.dataLayer[0].session.key, 'Key is defined');          
             assert.equal(win.dataLayer[0].session.sourceId,'20', 'SourceNo is correct');
-            assert.equal(win.dataLayer[0].session.version,'7.20.0.17', 'Version is correct');
+            assert.equal(win.dataLayer[0].session.version,'7.23.0.23', 'Version is correct');
 
             assert.equal(win.dataLayer[1].product.packageId, '0', 'Package Id is correct');
             assert.equal(win.dataLayer[1].product.productTypeDescription, 'Contribution1', 'Product Type Description is Correct');
@@ -176,7 +176,7 @@ describe('DataLayer Tests - Logged in', function () {
             assert.equal(win.dataLayer[0].session.isVersionSevenEnabled, true, 'Version Seven is enabled');
             assert.isDefined(win.dataLayer[0].session.key, 'Key is defined');          
             assert.equal(win.dataLayer[0].session.sourceId,'20', 'SourceNo is correct');
-            assert.equal(win.dataLayer[0].session.version,'7.20.0.17', 'Version is correct');
+            assert.equal(win.dataLayer[0].session.version,'7.23.0.23', 'Version is correct');
 
             assert.equal(win.dataLayer[1].product.packageId, '0', 'Package Id is correct');
             assert.equal(win.dataLayer[1].product.productTypeDescription, 'Contribution1', 'Product Type Description is Correct');
@@ -207,7 +207,7 @@ describe('DataLayer Tests - Logged in', function () {
             assert.equal(win.dataLayer[0].session.isVersionSevenEnabled, true, 'Version Seven is enabled');
             assert.isDefined(win.dataLayer[0].session.key, 'Key is defined');          
             assert.equal(win.dataLayer[0].session.sourceId,'20', 'SourceNo is correct');
-            assert.equal(win.dataLayer[0].session.version,'7.20.0.17', 'Version is correct');
+            assert.equal(win.dataLayer[0].session.version,'7.23.0.23', 'Version is correct');
 
             assert.equal(win.dataLayer[1].product.packageId, '0', 'Package Id is correct');
             assert.equal(win.dataLayer[1].product.productTypeDescription, 'Contribution2', 'Product Type Description is Correct');
@@ -238,7 +238,7 @@ describe('DataLayer Tests - Logged in', function () {
             assert.equal(win.dataLayer[0].session.isVersionSevenEnabled, true, 'Version Seven is enabled');
             assert.isDefined(win.dataLayer[0].session.key, 'Key is defined');          
             assert.equal(win.dataLayer[0].session.sourceId,'20', 'SourceNo is correct');
-            assert.equal(win.dataLayer[0].session.version,'7.20.0.17', 'Version is correct');
+            assert.equal(win.dataLayer[0].session.version,'7.23.0.23', 'Version is correct');
 
             assert.equal(win.dataLayer[1].product.packageId, '0', 'Package Id is correct');
             assert.equal(win.dataLayer[1].product.productTypeDescription, 'Contribution2', 'Product Type Description is Correct');
@@ -269,7 +269,7 @@ describe('DataLayer Tests - Logged in', function () {
             assert.equal(win.dataLayer[0].session.isVersionSevenEnabled, true, 'Version Seven is enabled');
             assert.isDefined(win.dataLayer[0].session.key, 'Key is defined');          
             assert.equal(win.dataLayer[0].session.sourceId,'20', 'SourceNo is correct');
-            assert.equal(win.dataLayer[0].session.version,'7.20.0.17', 'Version is correct');
+            assert.equal(win.dataLayer[0].session.version,'7.23.0.23', 'Version is correct');
 
             assert.equal(win.dataLayer[1].product.packageId, '818', 'Package Id is correct');
             assert.equal(win.dataLayer[1].product.productTypeDescription, 'StandardLegacyProductType', 'Product Type Description is Correct');

@@ -94,9 +94,9 @@ describe('v7 to v6 Redirects non-Auth Page', function() {
 
     
     it('Visits the v6 Auxiliary Listing Page Url', function() {
-      cy.visit('/auxiliary/Reserve.aspx?p=6940')
+      cy.visit('/auxiliary/Reserve.aspx?p=31043')
     
-      cy.url().should('contains', '/6933/6940')
+      cy.url().should('contains', '/15283/31043')
 
     })
 
@@ -225,7 +225,7 @@ describe('v7 to v6 Redirects non-Auth Page', function() {
     it('Visits the Prod Season Page Url', function() {
       cy.visit('/single/psDetail.aspx?psn=6954')
     
-      cy.url().should('contains', '/6954?psn=6954')
+      cy.url().should('contains', '/overview/6954?psn=6954')
       //verify it redirects with a 301 code
 
     })

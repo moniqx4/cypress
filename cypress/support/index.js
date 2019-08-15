@@ -23,3 +23,9 @@ import './commands'
 // require('./commands')
 
 require('cypress-xpath')
+
+// This is where you set anything you want to run BEFORE each TEST
+
+beforeEach(() => {
+    // cy.exec()  // this is for executing any scripts you might have
+})

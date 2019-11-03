@@ -8,9 +8,8 @@ Why use Cypress.io?
 
          - The way it allows you to work with the tests and review steps as needed, work perfectly for this usage.
 
-Would you use as a fully automated testing tool?
+         - Good to review with development, providing dev understands tool, otherwise if they don't they may require you re-run test in regular browser
 
-            Probably not now. Without understanding the advanced features of the tool better, I can't really say how well it would function in that capacity.
 
 Cons: 
  - Chrome, as far as I can tell limited to Chrome.
@@ -37,7 +36,11 @@ Identifying page elements:
 . for classes
 
 Reusable modules: 
- - cy.add_fixedpackage(pricetype_selector,num_pkgs)
  - cy.login(email, password)
  - cy.logout()
- - cy.adminlogin(email, password)
+ 
+ See the support directory index.js file for the imported files and review for more reusable modules
+
+ For running test headlessly:  see https://docs.cypress.io/guides/guides/command-line.html#How-to-run-commands:
+ 
+ cypress run [options]

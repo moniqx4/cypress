@@ -24,147 +24,120 @@
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-//-- Login command --
-Cypress.Commands.add("login", (email, password) => {
 
-    cy.get('#PatronAccountLogin_Username')
-    .type(email)
-    .should('have.value', email)
+    /* -- Logout command -- */
+    Cypress.Commands.add("logout", () => {
 
-    cy.get('#PatronAccountLogin_Password')
-    .type(password)  
-    
-    cy.get('#tn-login-button').click()
+        let logoutElementName = '';
+        let urlPath = '';
 
-    //check that user is logged in
-    cy.get('.tn-login-link')
-    .contains(email).should('be.visible')
+        cy.get(logoutElementName).click()
 
-})
+        /* -- verification they have logged out -- */
+        cy.url().should('contains', urlPath)
 
-//-- Logout command --
-Cypress.Commands.add("logout", () => {
-    cy.get('.tn-logout-link').click()
-    //verification they have logged out 
-    cy.url().should('contains', '/account/logout')
-
-})
-
-// -- Admin Login --
-Cypress.Commands.add("adminlogin", (email, password) => {
-      // Valid Admin Login Entry
-      cy.get('#login-username')
-      .type(email)
-      .should('have.value', email)
- 
-      cy.get('#login-password')
-      .type(password)
-})
-
-// -- Check to be sure ckeditor is not loaded --
-Cypress.Commands.add("no_ckeditor", (urlpath) => {
-    
-    cy.visit(urlpath)
-
-    cy.get('script').should('not.have.value','ckeditor.js')
-    cy.get('script').should('not.have.value','/libs/ckeditor/adapters/jquery.js')
-    cy.get('script').should('not.have.value','/tnew-content-editor')
-})
-
-// -- Check to be sure ckeditor is not loaded, workaround for cross origin frame error --
-Cypress.Commands.add("no_ckeditor2", (urlpath) => {
-
-    cy.request(urlpath)
-   
-    cy.get('script').should('not.have.value','ckeditor.js')
-    cy.get('script').should('not.have.value','/libs/ckeditor/adapters/jquery.js')
-    cy.get('script').should('not.have.value','/tnew-content-editor')
-})
-
-// -- Check to be sure ckeditor is loaded, workaround for cross origin frame error --
-Cypress.Commands.add("ckeditor_loaded", (urlpath) => {
-    
-    cy.visit(urlpath)
-    cy.get('.tn-admin-preview-banner__heading').click
-    cy.get('script').contains('ckeditor')
-    //cy.contains('script','ckeditor')
-    //cy.contains('script','/resources/js/libs/ckeditor/adapters/jquery.js')
-    //cy.contains('script','/tnew-content-editor')
-
-    // cy.get('script').contains('contain','ckeditor.js')
-    // cy.get('script').contains('contain','/libs/ckeditor/adapters/jquery.js')
-    // cy.get('script').contains('contain','/tnew-content-editor')
-})
-
-// -- open a new tab, and open new page in tab
-Cypress.Commands.add("NewTab",(win)  => {
-   
-        cy.stub(win, 'open').as('windowOpen')
-        cy.get('#open-window').click()
-        //cy.get('@windowOpen').should('be.calledWith', urlpath)
-})
-
-//---check metadata on page
-Cypress.Commands.add("checkMetadata",(tagname, expvalue) => {
-
-    it('look inside page source code',() => {
-        cy.document();
-    
     })
 
-    //check author, Monica
-    it('looks inside <meta> tag for metadata', () => {
-        cy.get(tagname).should("have.attr","content",expvalue)
+    /* -- Open a new tab, and open new page in tab  -- */
+    Cypress.Commands.add("NewTab",(win)  => {
+    
+            cy.stub(win, 'open').as('windowOpen')
+            cy.get('#open-window').click()
+            //cy.get('@windowOpen').should('be.calledWith', urlpath)
     })
 
-})
+    /* ---check metadata on page */
+    Cypress.Commands.add("checkMetadata",(tagname, expvalue) => {
 
-//---check metadata on page
-Cypress.Commands.add("getMetadata",(tagname, metadata) => {
+        it('look inside page source code',() => {
+            cy.document();
+        
+        })
 
-    it('look inside page source code',() => {
-        cy.document();
-    
+        it('looks inside <meta> tag for metadata', () => {
+            cy.get(tagname).should("have.attr","content",expvalue)
+        })
+
     })
 
-    //get specified metadata
-    it('looks inside <meta> tag for metadata', () => {
-        cy.get(tagname).should("have.attr","content",metadata).then(($value) => {
-            const valuetext = $value.text()
+    /* --- Check Metadata on page -- */
+    Cypress.Commands.add("getMetadata",(tagname, metadata) => {
+
+        it('look inside page source code',() => {
+            cy.document();
+        
+        })
+
+        //Get Specified Metadata
+        it('looks inside <meta> tag for metadata', () => {
+            cy.get(tagname).should("have.attr","content",metadata).then(($value) => {
+                const valuetext = $value.text()
+        })
+
     })
 
-})
 
-// -- HPA Payment --
-Cypress.Commands.add("hpa_payment", () => {
-    // Fillout form and submit payment
+    /* -- Navigate To a Page -- */
+    Cypress.Commands.add("navigateTo", (pathToPage) => {
+
+        // Visits Page
+        cy.visit(pathToPage)
+
+    })
+
+    /* -- Login command - Generic -- */
+    Cypress.Commands.add("LoginGeneric", (email, password, emailElementName, passwordElementName, buttonElementName,elementName) => {
+
+        cy.FillTextBox(emailElementName,email)
+        // cy.get(emailElementName)
+        //.type(email)
+        .should('have.value', email)
+
+        //cy.get(passwordElementName)
+        //.type(password)
+        cy.FillTextBox(passwordElementName,password)
+        
+        // cy.get('#tn-login-button').click()
+        cy.ClickButton(buttonElementName)
+
+        /* -- check that user is logged in  -- */
+        cy.get(elementName)
+        .contains(email).should('be.visible')
+
+    })
+
+     /* -- Login command - ElementHardCode -- */
+     Cypress.Commands.add("login", (email, password) => {
+
+        // enter in the element names for these items
+        let emailElementName = '';
+        let passwordElementName = '';
+        let buttonElementName = '';
+        let elementName = '';
+
+        cy.FillTextBox(emailElementName,email)
+        // cy.get(emailElementName)
+        //.type(email)
+        .should('have.value', email)
+
+        //cy.get(passwordElementName)
+        //.type(password)
+        cy.FillTextBox(passwordElementName,password)
+        
+        // cy.get('#tn-login-button').click()
+        cy.ClickButton(buttonElementName)
+
+        /* -- check that user is logged in  -- */
+        cy.get(elementName)
+        .contains(email).should('be.visible')
+
+    })
+
+    /* Get the window.document of the page that is currently active. */
+    Cypress.Commands.add("getDocument",(elementText) => {
+
+    cy.document().contains(elementText)
     
-})
-
-// -- Package Add --
-Cypress.Commands.add("add_fixedpackage", (pricetype_selector,num_pkgs) => {
-    // select price type and quantity
-    cy.get('#tn-fixed-package-detail-form > div.tn-ticket-selector__controls-container > fieldset.tn-ticket-selector__zone-selector > ul > li > label > input').click()
-
-        cy.get(pricetype_selector).select(num_pkgs)
-
-        cy.get('#tn-add-to-cart-button').click()
-    
-})
-
-// -- Gift Cert Add -- 
-Cypress.Commands.add("AddGiftCerticate", (amount) => {
-
-    //goto gift cert page
-    cy.visit('/gift/add')
-
-    //add to cart
-    cy.get('#AddGiftCertificate_Amount')
-    .type(amount)
-
-    //amount box, id = AddGiftCertificate_Amount
-    //click Add to cart id = tn-gift-certificate-submit
-    cy.get('#tn-gift-certificate-submit').click()
-})
+    })
 
 })

@@ -48,21 +48,4 @@ declare namespace Cypress {
        ClearFillTextBox(elementName: string,value:string): Chainable<Element>
       }
 
-      interface Chainable {
-        /**
-         * Custom command to calculate Benefit Cost
-         * @example cy.CalculateBenefitCost('firstname','dependents')
-        */
-       CalculateBenefitCost(firstname: string,dependents:string): Chainable<Element>
-      }
-
-      interface Chainable {
-        /**
-         * Custom command to calculate Net Pay
-         * @example cy.CalculateNetPay(benefitCost)
-        */
-       CalculateNetPay(benefitCost: string): Chainable<Element>
-      }
-
-
   }

@@ -112,19 +112,13 @@
         // enter in the element names for these items
         let emailElementName = '.form-username';
         let passwordElementName = '.form-password';
-        let buttonElementName = '#btnLogin';
-        //let elementName = '';
+        let buttonElementName = '#btnLogin';        
 
-        cy.FillTextBox(emailElementName,email)
-        // cy.get(emailElementName)
-        //.type(email)
+        cy.FillTextBox(emailElementName,email)        
         .should('have.value', email)
 
-        //cy.get(passwordElementName)
-        //.type(password)
         cy.FillTextBox(passwordElementName,password)
-        
-        // cy.get('#tn-login-button').click()
+               
         cy.ClickButton(buttonElementName)
 
         /* -- check that user is logged in  -- */
@@ -139,5 +133,45 @@
     cy.document().contains(elementText)
     
     })
+
+    
+/*calculate Expected Benefits and Net Pay*/
+Cypress.Commands.add('CalculatePay',(firstname,dependents) => {
+    
+    const baseBenefit = 1000
+    const dependentBenefit = 500
+    const baseGrossPay = '2000'
+    const payPeriods = 26
+    const discount = .10
+    //let payValues = []
+
+    let totalBenefitCost = baseBenefit + (parseInt(dependents)*dependentBenefit)
+
+            //Gets the first letter of the firstname, and forces it to lowercase ( if not already lowercase)
+            let firstNameChar = firstname[0].toLowerCase()
+            let newBenefitCost
+
+            // If the first name of the employee starts with an 'a', then they are given a 10% discount on benefit cost
+            if(firstNameChar == 'a'){
+                //Takes the total benefit cost and multiplies it by 10%
+                let benefitDisc = totalBenefitCost * discount
+                
+                //Takes the total Benefit Cost, and subtracts the benefit discount
+                newBenefitCost =  totalBenefitCost - benefitDisc
+
+                //To figure out the benefit cost per paycheck, divides the total benefit cost by the number of pay periods
+                newBenefitCost = (newBenefitCost / payPeriods)
+                
+            } else {
+                //For employees with a firstname that does NOT start with 'a', they do not get the discount and this calculates the benefit cost without the discount
+                newBenefitCost = (totalBenefitCost / payPeriods)
+                
+            }
+            // This calculates the NetPay for verification. 
+            netPay =  parseInt(baseGrossPay) - newBenefitCost.toFixed(2)
+          
+
+    
+})
 
 })

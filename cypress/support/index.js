@@ -50,17 +50,6 @@ Cypress.Commands.add('clickButton', (btnElementName) => {
         cy.get(btnElementName).click()
 })
 
-/* -- Fill in a text box*/
-// Cypress.Commands.add('fillTextBox', (elementName,value) => {
- 
-//     /* --  Grabs the element on the page, name needs to be include the # if id, or . for a class, etc -- */
-//     cy.get(elementName)
-//     .type(value)
-
-// }) 
-
-
-
 /* -- Fills out the Add Employee Form -- */
 Cypress.Commands.add('addEmployee',(firstname, lastname, dependents) => {
 
@@ -69,17 +58,13 @@ Cypress.Commands.add('addEmployee',(firstname, lastname, dependents) => {
     let depElement = '.col-xs-1 > .form-control'
     let buttonElementName  = '.col-sm-offset-2 > .btn-primary'
 
-    cy.FillTextBox(fnameElement,firstname)
-    
+    cy.FillTextBox(fnameElement,firstname)    
 
-    cy.FillTextBox(lnameElement,lastname)
-    
+    cy.FillTextBox(lnameElement,lastname)    
 
-    cy.FillTextBox(depElement,dependents)
- 
+    cy.FillTextBox(depElement,dependents) 
 
     cy.ClickButton(buttonElementName)
-
     
 })
 
@@ -90,54 +75,20 @@ Cypress.Commands.add('verifyDataEntry',(actId, actFname, actLname, actSal, actDe
 
 })
 
-/* -- Fills out the Add Employee Form -- */
+/* -- Fills out the Edit Employee Form -- */
 Cypress.Commands.add('editEmployee',(firstname, lastname, dependents) => {
 
-    var fnameElement = ':nth-of-type(1) > .col-sm-10 > .form-control' 
- 
-    var lnameElement = ':nth-child(2) > .col-sm-10 > .form-control'
-    
-    var depElement = '.col-xs-1 > .form-control'
-    var buttonElementName  = '.col-sm-offset-2 > .btn-primary'
-
+    let fnameElement = ':nth-of-type(1) > .col-sm-10 > .form-control'  
+    let lnameElement = ':nth-child(2) > .col-sm-10 > .form-control'    
+    let depElement = '.col-xs-1 > .form-control'
+    let buttonElementName  = '.col-sm-offset-2 > .btn-primary'
     
     cy.ClearFillTextBox(fnameElement,firstname)
 
     cy.ClearFillTextBox(lnameElement,lastname)
     
-    cy.ClearFillTextBox(depElement,dependents)
- 
+    cy.ClearFillTextBox(depElement,dependents) 
 
     cy.ClickButton(buttonElementName)
 
-})
-
-/*calculate benefit cost*/
-Cypress.Commands.add('CalculateBenefitCost',(firstname, dependents) => {
-
-    var baseBenefit = 1000
-    var dependentBenefit = 500
-
-    totalbenefitCost = baseBenefit + (parseInt(dependents)*dependentBenefit)
-
-    firstNameChar = firstname[0]
-
-    if(firstNameChar.lowerCase() == 'a'){
-        benefitDisc = totalbenefitCost * .10
-        return totalbenefitCost - benefitDisc
-    } else {
-        return totalbenefitCost
-    }
-
-
-})
-
-/*calculate Net Pay*/
-Cypress.Commands.add('CalculateNetPay',(benefitCost) => {
-
-    var grossPay = 2000
-    
-    return grossPay - benefitCost
-
-    
 })

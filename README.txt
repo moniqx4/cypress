@@ -12,7 +12,7 @@ Why use Cypress.io?
 
 
 Cons: 
- - Chrome, as far as I can tell limited to Chrome.
+ - Chrome, as far as I can tell limited to Chrome and Electron
 
  Pros: 
  - 1 package to install, has everything you need. No need to go and grab or update various pieces seperately
@@ -35,7 +35,7 @@ Identifying page elements:
 # for Id 
 . for classes
 
-Reusable modules: 
+Reusable modules ( setup in /support/index.js): 
  - cy.login(email, password)
  - cy.logout()
  

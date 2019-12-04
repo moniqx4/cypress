@@ -1,3 +1,6 @@
 vscode
 ./cypress.json
 ./cypress.code-workspace
+cypress/videos
+cypress/screenshots
+node_modules

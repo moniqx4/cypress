@@ -1,21 +1,21 @@
 {
-  "name": "tnewcypress",
+  "name": "webtest_cypress",
   "version": "1.0.0",
   "description": "cypress test project",
   "main": "index.js",
-<<<<<<< HEAD
-  "dependencies": {},
-  "devDependencies": {
-=======
+  "author": "Monica Dixon",
+  "license": "ISC",
   "dependencies": {
->>>>>>> master
-    "cypress": "^3.0.3"
+    "cypress": "3.7.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "cypress-cucumber-preprocessor": "^1.16.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open"
   },
-  "author": "Monica Dixon",
-  "license": "ISC"
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  }
 }

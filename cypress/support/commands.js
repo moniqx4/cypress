@@ -10,7 +10,7 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add("login", (email, password) => { ... })
+// Cypress.Commands.add('login', (email, password) => { ... })
 //
 //
 // -- This is a child command --
@@ -107,13 +107,13 @@
     })
 
      /* -- Login command - ElementHardCode -- */
-     Cypress.Commands.add("login", (email, password) => {
+     Cypress.Commands.add('login', (email, password) => {
 
         // enter in the element names for these items
-        let emailElementName = '';
-        let passwordElementName = '';
-        let buttonElementName = '';
-        let elementName = '';
+        let emailElementName = '.form-username';
+        let passwordElementName = '.form-password';
+        let buttonElementName = '#btnLogin';
+        //let elementName = '';
 
         cy.FillTextBox(emailElementName,email)
         // cy.get(emailElementName)
@@ -128,8 +128,8 @@
         cy.ClickButton(buttonElementName)
 
         /* -- check that user is logged in  -- */
-        cy.get(elementName)
-        .contains(email).should('be.visible')
+        //cy.get(elementName)
+        //.contains(email).should('be.visible')
 
     })
 

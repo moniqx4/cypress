@@ -1,7 +1,7 @@
 Why use Cypress.io?
 
-       So far I have found Cypress.io to be a great aid with manual testing. 
-          - The tests are easy to write and run quite fast (must faster then me doing it) and work the first time.
+       So far I have found Cypress.io to be a great assist for manual testing. 
+          - The tests are easy to write and run quite fast (much faster then me doing it) and work the first time.
           - Saves me from running a bunch of repetive actions with low overhead. I've been able to create these tests that run a set of steps or complete test on the fly for a manual testing sesssion. For example, may take 15 minutes to create the test(s), or group of steps, which is the time it take to step through it once and get the elements. Then after that, I focus more on the results of each test then the testing now. Click, run test, review outcome, make any changes to setup ( like enable or disabling something to see how thing behave) and repeat. 
 
          - It supports reusablity of these steps, making it even faster to throw together a set of tests.
@@ -9,10 +9,13 @@ Why use Cypress.io?
          - The way it allows you to work with the tests and review steps as needed, work perfectly for this usage.
 
          - Good to review with development, providing dev understands tool, otherwise if they don't they may require you re-run test in regular browser
+         
+         - Can record your videos of test runs to their dashboard and will output some ok reports of the testruns. However, haven't figure out how to make it only run what I want and record those, seems to do everything I have. I'm sure its some setting somewhere I'm missing.
 
 
 Cons: 
- - Chrome, as far as I can tell limited to Chrome.
+ - Chrome, as far as I can tell limited to Chrome and Electron. On the roadmap they have FireFox listed.
+ - Can be difficult to locate the cause and fix an error,that is caused by not doing something the way Cypress wants you to. 
 
  Pros: 
  - 1 package to install, has everything you need. No need to go and grab or update various pieces seperately

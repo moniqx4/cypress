@@ -99,7 +99,7 @@ describe('Adding a New Employee, and then editing changing data', ()  => {
             .each(rec => {
 
                 let newemployee = newemployees[row]                
-                const tableName = '#employee-table'
+                const TableName = '#employee-table'
                 let wrench = ':nth-child(' + row + ') > :nth-child(9) > #btnEdit'
 
                 /* Clicks the wrench icon to edit each record */
@@ -125,13 +125,13 @@ describe('Adding a New Employee, and then editing changing data', ()  => {
                 let netPay =  parseInt(GrossPay) - newBenefitCost.toFixed(2)
                     
                 /* Verify employee edited correctly */
-                cy.get(tableName).contains('td', newemployee.firstNameChanged)
-                cy.get(tableName).contains('td', newemployee.lastNameChanged)  
-                cy.get(tableName).contains('td', Salary)
-                cy.get(tableName).contains('td', newemployee.dependents)
-                cy.get(tableName).contains('td', GrossPay)
-                cy.get(tableName).contains('td', newBenefitCost.toFixed(2))
-                cy.get(tableName).contains('td', netPay)
+                cy.get(TableName).contains('td', newemployee.firstNameChanged)
+                cy.get(TableName).contains('td', newemployee.lastNameChanged)  
+                cy.get(TableName).contains('td', Salary)
+                cy.get(TableName).contains('td', newemployee.dependents)
+                cy.get(TableName).contains('td', GrossPay)
+                cy.get(TableName).contains('td', newBenefitCost.toFixed(2))
+                cy.get(TableName).contains('td', netPay)
 
             
                 row = parseInt(row) + 1

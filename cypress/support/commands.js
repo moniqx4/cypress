@@ -88,16 +88,11 @@
     /* -- Login command - Generic -- */
     Cypress.Commands.add("LoginGeneric", (email, password, emailElementName, passwordElementName, buttonElementName,elementName) => {
 
-        cy.FillTextBox(emailElementName,email)
-        // cy.get(emailElementName)
-        //.type(email)
+        cy.FillTextBox(emailElementName,email)        
         .should('have.value', email)
 
-        //cy.get(passwordElementName)
-        //.type(password)
         cy.FillTextBox(passwordElementName,password)
-        
-        // cy.get('#tn-login-button').click()
+
         cy.ClickButton(buttonElementName)
 
         /* -- check that user is logged in  -- */

@@ -20,9 +20,8 @@ describe('Paylocity Test Exercise', () => {
      
         it('Navigates to the Login Page successful login', () => {
                 
-         cy.login(UserName,Password)
-    
-         cy.url().should('include', ExpectedUrl)
+          cy.login(UserName,Password)
+          cy.url().should('include', ExpectedUrl)
              
         })
       })
@@ -43,7 +42,7 @@ describe('Paylocity Test Exercise', () => {
 
          // Adds the Employees 
           cy.get('@employees')       
-         .then((employees) => {
+         .then((employees) => { 
           
           /* this is just a list of the ids for each testcase, all are listed, but could run specific ones based on the id */
           const recs = ['1', '2', '3', '4', '5', '6','7','8','9','10','11','12','13','14','15','16','17']

@@ -60,25 +60,19 @@ Cypress.Commands.add('addEmployee',(firstname, lastname, dependents) => {
 
     cy.FillTextBox(fnameElement,firstname)    
 
-    cy.FillTextBox(lnameElement,lastname)    
+    cy.FillTextBox(lnameElement,lastname) 
 
-    cy.FillTextBox(depElement,dependents) 
+    cy.FillTextBox(depElement,dependents)
 
     cy.ClickButton(buttonElementName)
     
 })
 
-Cypress.Commands.add('verifyDataEntry',(actId, actFname, actLname, actSal, actDep, actGpay, actBenCost, actNetPay) =>{
-    expId, expFname, expLname, expSal, expDep, expGpay, expBenCost, expNetPay
-
-    actId = cy.get('tbody > :nth-child(2) > :nth-child(1)')
-
-})
 
 /* -- Fills out the Edit Employee Form -- */
 Cypress.Commands.add('editEmployee',(firstname, lastname, dependents) => {
 
-    let fnameElement = ':nth-of-type(1) > .col-sm-10 > .form-control'  
+    let fnameElement = ':nth-of-type(1) > .col-sm-10 > .form-control'
     let lnameElement = ':nth-child(2) > .col-sm-10 > .form-control'    
     let depElement = '.col-xs-1 > .form-control'
     let buttonElementName  = '.col-sm-offset-2 > .btn-primary'
